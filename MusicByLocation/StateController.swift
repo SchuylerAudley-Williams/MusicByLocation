@@ -10,11 +10,12 @@ import Foundation
 class StateController: ObservableObject {
     @Published var lastKnownLocation: String = "" {
         didSet {
-            getArtists(city: lastKnownLocation)
+            iTunesAdaptor.getArtists(search: lastKnownLocation, completion: updateArtistsByLocation)
         }
     }
     @Published var artistNames: String = ""
     let locationHandler: LocationHandler = LocationHandler()
+    let iTunesAdaptor = ITunesAdaptor()
     
     func findMusic() {
         locationHandler.requestLocation()
@@ -25,39 +26,10 @@ class StateController: ObservableObject {
         locationHandler.requestAuthorisation()
     }
     
-    func getArtists(city: String) {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=\(city)&entity=musicArtist")
-        else {
-            print("Invalid URL")
-            return
+    func updateArtistsByLocation(artists: [Artist]?) {
+        let names = artists?.map { return $0.name }
+        DispatchQueue.main.async {
+            self.artistNames = names?.joined(separator: ", ") ?? "error"
         }
-        
-        let request = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    
-                    if let data = data {
-                        if let response = self.parseJson(json: data) {
-                            let names = response.results.map {
-                                return $0.name
-                            }
-                            DispatchQueue.main.async {
-                                self.artistNames = names.joined(separator: ", ")
-                            }
-                        }
-                    }
-        }.resume()
-    }
-    
-    func parseJson(json: Data) -> ArtistResponse? {
-        let decoder = JSONDecoder()
-        
-        if let artistResponse = try? decoder.decode(ArtistResponse.self, from: json) {
-            return artistResponse
-        } else {
-            print("error decoding json")
-            return nil
-        }
-        
     }
 }

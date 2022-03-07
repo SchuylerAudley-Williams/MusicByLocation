@@ -19,6 +19,7 @@
 		3B26D84D27D018C9002203BE /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26D84C27D018C9002203BE /* StateController.swift */; };
 		3B26D85027D02754002203BE /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26D84F27D02754002203BE /* ArtistResponse.swift */; };
 		3B26D85227D0275E002203BE /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B26D85127D0275E002203BE /* Artist.swift */; };
+		3B8610CE27D6B0FF0044F8B5 /* ITunesAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8610CD27D6B0FF0044F8B5 /* ITunesAdaptor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		3B26D84C27D018C9002203BE /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
 		3B26D84F27D02754002203BE /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
 		3B26D85127D0275E002203BE /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		3B8610CC27D6AFCC0044F8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3B8610CD27D6B0FF0044F8B5 /* ITunesAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAdaptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 		3B26D81C27D003D9002203BE /* MusicByLocation */ = {
 			isa = PBXGroup;
 			children = (
+				3B8610CC27D6AFCC0044F8B5 /* Info.plist */,
 				3B26D84E27D02742002203BE /* Model */,
 				3B26D84927D01763002203BE /* Extensions */,
 				3B26D81D27D003D9002203BE /* MusicByLocationApp.swift */,
@@ -112,6 +116,7 @@
 				3B26D82327D003DB002203BE /* Preview Content */,
 				3B26D84727D00534002203BE /* LocationHandler.swift */,
 				3B26D84C27D018C9002203BE /* StateController.swift */,
+				3B8610CD27D6B0FF0044F8B5 /* ITunesAdaptor.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B26D84827D00534002203BE /* LocationHandler.swift in Sources */,
+				3B8610CE27D6B0FF0044F8B5 /* ITunesAdaptor.swift in Sources */,
 				3B26D82027D003D9002203BE /* ContentView.swift in Sources */,
 				3B26D81E27D003D9002203BE /* MusicByLocationApp.swift in Sources */,
 				3B26D84B27D0177D002203BE /* CLPlacemark.swift in Sources */,
@@ -457,7 +463,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MusicByLocation/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicByLocation/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Gathers location data for app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -486,7 +494,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MusicByLocation/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicByLocation/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Gathers location data for app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
